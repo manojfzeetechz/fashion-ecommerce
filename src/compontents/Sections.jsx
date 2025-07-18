@@ -11,7 +11,7 @@ const Sections = ({ data }) => {
 
   const handleNext = () => {
     setStartIndex((prev) =>
-      prev + 4 < data.length ? prev + 4 : prev
+      prev + 4 < data.length ? prev + 1 : prev
     );
   };
 

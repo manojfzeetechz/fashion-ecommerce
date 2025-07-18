@@ -162,7 +162,8 @@ const Home = () => {
                     </button>
                 </div>
             </section>
-            <Sections data={productList.slice(0, 4)} />
+
+            <Sections data={productList} />
 
 
 
@@ -224,7 +225,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
@@ -305,7 +306,7 @@ const Home = () => {
             </section>
 
 
-            <Sections data={productList.slice(0, 4)} /> 
+            <Sections data={productList} />
 
 
             <section className="w-full relative overflow-hidden">
@@ -340,7 +341,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
@@ -353,7 +354,7 @@ const Home = () => {
 
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
@@ -366,7 +367,7 @@ const Home = () => {
 
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
@@ -379,7 +380,7 @@ const Home = () => {
 
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
@@ -392,7 +393,7 @@ const Home = () => {
 
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full relative overflow-hidden">
                 <div className="relative w-full h-[400px] md:h-[550px] lg:h-[650px]">
@@ -426,7 +427,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <Sections data={productList.slice(0, 4)} />
+            <Sections data={productList} />
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
