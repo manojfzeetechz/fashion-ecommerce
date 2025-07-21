@@ -58,7 +58,7 @@ const Navbar = () => {
                         </NavLink>
 
                          <NavLink
-                            to="/shop_instagram"
+                            to="/shopinstagram"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
                             SHOP INSTAGRAM
