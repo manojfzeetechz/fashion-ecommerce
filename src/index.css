@@ -1,7 +1,29 @@
+@import "tailwindcss";
 .Tap-Photo {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 30px; 
   text-align: center;
   margin-top: 20px;
   color: #333;
+}
+.newarrival{
+  display: flex;
+  justify-content: center;
+  font-family: "Americana", sans-serif;
+  font-size: 30px; 
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  /* text-align: ; */
+}
+.slide-bar{
+  width: 10%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f8f8f8;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0), 0.1;
+  overflow-y: auto;
 }

@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import React from 'react'
-import './App.css'
-import Shopinstagram from './component/pages/Shopinstagram'
+import React from 'react';
+import About from './component/About/About';
+
 
 function App() {
 
 
   return (
-    <>
-     <Shopinstagram/>
-    </>
+    <div>
+      <About/>
+    </div>
   )
 }
 
