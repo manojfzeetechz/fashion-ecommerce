@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, showQuickShop }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
@@ -41,7 +41,6 @@ const ProductCard = ({ product }) => {
           className="w-full h-[400px] object-cover transition-transform duration-300 group-hover:scale-105"
         />
 
-        {/* Arrows inside image area */}
         <div className="absolute inset-0 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           <button
             className="p-2 bg-white bg-opacity-70 rounded-full ml-2 hover:bg-opacity-100 transition-all pointer-events-auto"
@@ -65,6 +64,25 @@ const ProductCard = ({ product }) => {
           {product.oldPrice}
         </span>
       </div>
+
+      {product.showQuickShop && (
+        <button
+          className="mt-3 px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
+          onClick={() => alert(`Quick shop for: ${product.title}`)}
+        >
+          Quick Shop
+        </button>
+      )}
+
+
+      {showQuickShop && (
+        <button
+          className="mt-3 px-4 py-2 border-2 border-black text-black hover:bg-black rounded-full w-full hover:text-white transition duration-500"
+          onClick={() => alert(`Quick shop for: ${product.title}`)}
+        >
+          Quick Shop
+        </button>
+      )}
     </div>
   );
 };

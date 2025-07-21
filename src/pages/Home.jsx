@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { productList } from "../compontents/Products";
+import { KidsSuitsList, MensSuitsList, NewArrivalsList, WomensSuitsList } from "../compontents/Products";
 import Sections from "../compontents/Sections";
 
 
@@ -10,21 +10,21 @@ import Sections from "../compontents/Sections";
 
 const videoItems = [
     {
-        src: "https://elagia.com/cdn/shop/videos/c/vp/ade8a3bad5494123af483ffca1bf630e/ade8a3bad5494123af483ffca1bf630e.HD-1080p-7.2Mbps-49799775.mp4?v=0",
+        src: "https://cdn.pixabay.com/video/2024/02/07/199623-910995789_tiny.mp4",
         subtitle: "ELEGANT COLLECTION",
-        title: "DRESSES",
+        title: "MAN'S SUITS",
         buttonText: "SHOP NOW",
     },
     {
-        src: "https://elagia.com/cdn/shop/videos/c/vp/e10c3cc72bb3455ea548ba52077c2474/e10c3cc72bb3455ea548ba52077c2474.HD-1080p-7.2Mbps.mp4?v=0",
-        subtitle: "MAKE A STATEMENT",
-        title: "JUMPSUITS",
+        src: "https://media.istockphoto.com/id/1130630556/video/decide-on-your-dreams-and-pursue-them-with-determination.mp4?s=mp4-640x640-is&k=20&c=kb4-nJ7YojJ7Jp-pFNxENrqXR5XIzddC7Gk0bta_iEs=",
+        subtitle: "POWER DRESSING",
+        title: "WOMEN'S SUITS",
         buttonText: "EXPLORE",
     },
     {
-        src: "https://elagia.com/cdn/shop/videos/c/vp/ad59237fabb04a5fbb273d286d88e5e7/ad59237fabb04a5fbb273d286d88e5e7.HD-1080p-7.2Mbps.mp4?v=0",
-        subtitle: "POWER DRESSING",
-        title: "SUITS",
+        src: "https://media.istockphoto.com/id/1269709070/video/small-manager-with-documents.mp4?s=mp4-480x480-is&k=20&c=g0aB7wjFbwfZiCkEkpsxX6xegUCxAxS72L-wJ9eUqAw=",
+        subtitle: "ELEGANT COLLECTION ",
+        title: "KID'S SUITS",
         buttonText: "DISCOVER",
     },
 ];
@@ -95,15 +95,15 @@ export const ProductCard = ({ product }) => {
 };
 
 const imagesSlider = [
-    "https://elagia.com/cdn/shop/files/Elagia_Desktop_Banner_28_Nov_Crop_Jacket_Suit.webp?v=1712727784&width=1600",
-    "https://elagia.com/cdn/shop/files/Elagia_WebBanner_HomeSections_PantsSuits_4.webp?v=1712727879&width=1600",
-    "https://elagia.com/cdn/shop/files/Elagia_WebBanner_NewSuits_1_1.webp?v=1712727971&width=1600",
+    "https://velsoir.com/wp-content/uploads/2025/03/Your-paragraph-text-2-scaled.png",
+    "https://velsoir.com/wp-content/uploads/2025/03/The-Power-of-Style-%E2%80%93-VELSOIR-1.png",
+    "https://velsoir.com/wp-content/uploads/2025/03/VINTAGE-ROBES-SHOWCASE-AT-MILAN-FASHION-WEEK-BY-VELSOIR-scaled.png",
 ];
 
-const imagesSlider2 = [
-    "https://elagia.com/cdn/shop/files/Elagia_WebBanner_SetsCollection_2_1.webp?v=1712728646&width=1600",
-    "https://elagia.com/cdn/shop/files/Elagia_WebBanner_HomeSections_PantsSuits_4.webp?v=1712727879&width=1600",
-    "https://elagia.com/cdn/shop/files/Elagia_BannerWeb_Sets_4_1.webp?v=1712728693&width=1600",
+const HomePageMainSlider = [
+    "https://velsoir.com/wp-content/uploads/2025/04/Your-paragraph-text-5-scaled.png",
+    "https://velsoir.com/wp-content/uploads/2025/04/Your-paragraph-text-6-scaled.png",
+    "https://velsoir.com/wp-content/uploads/2025/04/Your-paragraph-text-4-scaled.png",
 ];
 
 
@@ -111,7 +111,7 @@ const imagesSlider2 = [
 
 const Home = () => {
     const [startIndex, setStartIndex] = useState(0);
-    const featured = productList.slice(0, 3);
+    const featured = NewArrivalsList.slice(0, 3);
 
 
     const handlePrevproductList = () => {
@@ -147,23 +147,42 @@ const Home = () => {
     };
 
     return (
-        <div>
-            <section className="relative w-full h-[80vh] flex items-center justify-center">
-                <img
-                    src="https://elagia.com/cdn/shop/files/head_banner_3.jpg?v=1686737655&width=1600"
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover z-0"
-                />
-                <div className="relative z-10 text-center text-white px-4">
-                    <p className="text-lg mb-2">UP TO 70% OFF</p>
-                    <h1 className="text-5xl md:text-6xl font-bold mb-4">UNIQUE AS YOU ARE</h1>
-                    <button className="mt-10 px-6 py-2 bg-white text-black hover:bg-black text-base rounded hover:text-white transition">
-                        Shop Now
+        <>
+
+            <section className="w-full relative overflow-hidden">
+                <div className="relative w-full h-[300px] sm:h-[400px] md:h-[550px] lg:h-[650px] xl:h-[700px]">
+                    {HomePageMainSlider.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+                                }`}
+                        >
+                            <img
+                                src={img}
+                                alt={`Slide ${index + 1}`}
+                                className="w-full h-full object-contain "
+                            />
+                        </div>
+                    ))}
+
+                    <button
+                        onClick={goToPrevious}
+                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition sm:left-6 md:p-3"
+                    >
+                        <FaArrowLeft className="text-sm sm:text-base md:text-lg" />
+                    </button>
+
+                    <button
+                        onClick={goToNext}
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition sm:right-6 md:p-3"
+                    >
+                        <FaArrowRight className="text-sm sm:text-base md:text-lg" />
                     </button>
                 </div>
             </section>
 
-            <Sections data={productList} />
+            <Sections data={NewArrivalsList} title="New Arrivals"   showAll={false} />
+
 
 
 
@@ -201,84 +220,78 @@ const Home = () => {
                 </div>
             </section>
 
+            <section className="w-full relative overflow-hidden">
+                <div className="relative w-full h-[300px] sm:h-[400px] md:h-[550px] lg:h-[650px] xl:h-[700px]">
+                    {imagesSlider.map((img, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+                                }`}
+                        >
+                            <img
+                                src={img}
+                                alt={`Slide ${index + 1}`}
+                                className="w-full h-full object-contain px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+                            />
+                        </div>
+                    ))}
+
+                    <button
+                        onClick={goToPrevious}
+                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition sm:left-6 md:p-3"
+                    >
+                        <FaArrowLeft className="text-sm sm:text-base md:text-lg" />
+                    </button>
+
+                    <button
+                        onClick={goToNext}
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition sm:right-6 md:p-3"
+                    >
+                        <FaArrowRight className="text-sm sm:text-base md:text-lg" />
+                    </button>
+                </div>
+            </section>
+
             <section className="w-full grid grid-cols-1 ">
+
                 <div>
                     <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_Desktop_Banner_28_Nov_One_Shoulder_Dress.jpg?v=1701694963&width=1600"
+                        src="https://velsoir.com/wp-content/uploads/2025/03/DISCOVER-THE-LOOKS-YOU-LOVE.png"
                         alt=""
                         className="w-full h-auto object-cover rounded-lg"
                     />
                 </div>
                 <div>
                     <img
-                        src="https://elagia.com/cdn/shop/files/ShopPay_VIossi_10.webp?v=1712663690&width=1600"
-                        alt=""
-                        className="w-full h-auto object-cover rounded-lg"
-                    />
-                </div>
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_WebBanner_NewSets_2.webp?v=1712725332&width=1600"
+                        src="https://velsoir.com/wp-content/uploads/2025/04/a2-scaled.png"
                         alt=""
                         className="w-full h-auto object-fir "
                     />
                 </div>
             </section>
 
-            <Sections data={productList} />
+            <Sections data={MensSuitsList} title="Mens Suits" />
+
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
                     <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_Desktop_Banner_28_Nov_Jumpsuit_b_1.webp?v=1712725967&width=1600"
+                        src="https://velsoir.com/wp-content/uploads/2025/03/Effortless-Elegance-%E2%80%93-Shop-the-Latest-Trends-1.png"
                         alt=""
                         className="w-full h-auto object-fill "
                     />
                 </div>
                 <div className="relative w-full">
                     <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_WebBanner_AppScreen_3.webp?v=1712726481&width=1600"
+                        src="https://velsoir.com/wp-content/uploads/2025/03/SLAY-IN-STYLE.png"
                         alt=""
                         className="w-full h-auto object-cover rounded-lg"
                     />
-
-                    <div className="absolute bottom-6 ms-20 mb-10 flex space-x-5">
-                        <button className="px-6 py-2  bg-gray-200 text-black hover:bg-black text-base rounded hover:text-white transition">
-                            IOS
-                        </button>
-                        <button className="px-6 py-2 bg-gray-200 text-black hover:bg-black text-base rounded hover:text-white transition">
-                            ANDROID
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <section className="w-full grid grid-cols-1 ">
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_Desktop_Banner_28_Nov_Jumpsuit_b_1.webp?v=1712725967&width=1600"
-                        alt=""
-                        className="w-full h-auto object-fill "
-                    />
-                </div>
-                <div className="relative w-full">
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_WebBanner_AppScreen_3.webp?v=1712726481&width=1600"
-                        alt=""
-                        className="w-full h-auto object-cover rounded-lg"
-                    />
-
-                    <div className="absolute bottom-6 ms-20 mb-10 flex space-x-5">
-                        <button className="px-6 py-2  bg-gray-200 text-black hover:bg-black text-base rounded hover:text-white transition">
-                            IOS
-                        </button>
-                        <button className="px-6 py-2 bg-gray-200 text-black hover:bg-black text-base rounded hover:text-white transition">
-                            ANDROID
-                        </button>
-                    </div>
                 </div>
             </section>
 
-            <section>
+
+            {/* <section>
                 <div className="flex flex-col md:flex-row gap-8 px-4 justify-center items-center">
                     <iframe
                         width="100%"
@@ -292,7 +305,7 @@ const Home = () => {
                     ></iframe>
                 </div>
 
-            </section>
+            </section> */}
 
             <section className="w-full grid grid-cols-1 ">
                 <div>
@@ -306,10 +319,28 @@ const Home = () => {
             </section>
 
 
-            <Sections data={productList} />
+            <Sections data={WomensSuitsList} title="Womens Suits" />
 
 
-            <section className="w-full relative overflow-hidden">
+            <section className="w-full grid grid-cols-1 ">
+                <div>
+                    <img
+                        src="https://velsoir.com/wp-content/uploads/2025/04/a7-scaled.png"
+                        alt=""
+                        className="w-full h-auto object-fill "
+                    />
+                </div>
+                <div className="relative w-full">
+                    <img
+                        src="https://velsoir.com/wp-content/uploads/2025/04/a2-scaled.png"
+                        alt=""
+                        className="w-full h-auto object-cover rounded-lg"
+                    />
+                </div>
+            </section>
+
+            {/* images slider? */}
+            {/* <section className="w-full relative overflow-hidden">
                 <div className="relative w-full h-[400px] md:h-[550px] lg:h-[650px]">
                     {imagesSlider.map((img, index) => (
                         <div
@@ -339,108 +370,47 @@ const Home = () => {
                         <FaArrowRight />
                     </button>
                 </div>
-            </section>
+            </section> */}
 
-            <Sections data={productList} />
-
-            <section className="w-full grid grid-cols-1 ">
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_Desktop_Banner_28_Nov_Strappy_Cut_Out_Dress.webp?v=1712728198&width=1600"
-                        alt=""
-                        className="w-full h-auto object-fill "
-                    />
-                </div>
-
-            </section>
-
-            <Sections data={productList} />
-
-            <section className="w-full grid grid-cols-1 ">
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/BANNER_WEB_1_SEP_1.webp?v=1712728372&width=1600"
-                        alt=""
-                        className="w-full h-auto object-fill "
-                    />
-                </div>
-
-            </section>
-
-            <Sections data={productList} />
-
-            <section className="w-full grid grid-cols-1 ">
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_WebBanner_WrapDress_3.webp?v=1712728483&width=1600"
-                        alt=""
-                        className="w-full h-auto object-fill "
-                    />
-                </div>
-
-            </section>
-
-            <Sections data={productList} />
-
-            <section className="w-full grid grid-cols-1 ">
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_WebBanner_WrapDress_3.webp?v=1712728483&width=1600"
-                        alt=""
-                        className="w-full h-auto object-fill "
-                    />
-                </div>
-
-            </section>
-
-            <Sections data={productList} />
+            <Sections data={KidsSuitsList} title="Kids Suits" />
 
             <section className="w-full relative overflow-hidden">
-                <div className="relative w-full h-[400px] md:h-[550px] lg:h-[650px]">
-                    {imagesSlider2.map((img, index) => (
+                <div className="relative w-full h-[300px] sm:h-[400px] md:h-[550px] lg:h-[650px] xl:h-[700px]">
+                    {imagesSlider.map((img, index) => (
                         <div
                             key={index}
-                            className={`absolute inset-0 transition-opacity duration-1000 ${currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+                            className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
                                 }`}
                         >
                             <img
                                 src={img}
                                 alt={`Slide ${index + 1}`}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20"
                             />
                         </div>
                     ))}
 
                     <button
                         onClick={goToPrevious}
-                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition"
+                        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition sm:left-6 md:p-3"
                     >
-                        <FaArrowLeft />
+                        <FaArrowLeft className="text-sm sm:text-base md:text-lg" />
                     </button>
 
                     <button
                         onClick={goToNext}
-                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition"
+                        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full z-20 transition sm:right-6 md:p-3"
                     >
-                        <FaArrowRight />
+                        <FaArrowRight className="text-sm sm:text-base md:text-lg" />
                     </button>
                 </div>
             </section>
 
-            <Sections data={productList} />
 
-            <section className="w-full grid grid-cols-1 ">
-                <div>
-                    <img
-                        src="https://elagia.com/cdn/shop/files/Elagia_WebBanner_Tops_1.webp?v=1712728865&width=1600"
-                        alt=""
-                        className="w-full h-auto object-fill "
-                    />
-                </div>
 
-            </section>
 
-        </div>
+
+        </>
     );
 };
 

@@ -25,12 +25,7 @@ const Navbar = () => {
                         >
                             NEW IN
                         </NavLink>
-                        <NavLink
-                            to="/dresses"
-                            className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
-                        >
-                            DRESSES
-                        </NavLink>
+                       
                         <NavLink
                             to="/suits"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
@@ -41,44 +36,46 @@ const Navbar = () => {
                             to="/jumpsuits"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
-                            JUMPSUITS
+                           BLAZERS
                         </NavLink>
                         <NavLink
-                            to="/tops"
+                            to="/trousers"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
-                            TOPS
+                            TROUSERS
                         </NavLink>
                         <NavLink
                             to="/pants"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
-                            PANTS
+                            SHIRTS
                         </NavLink>
                         <NavLink
                             to="/skirts"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
-                            SKIRTS
+                            SMOKING ROBE
+                        </NavLink>
+
+                         <NavLink
+                            to="/shop_instagram"
+                            className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
+                        >
+                            SHOP INSTAGRAM
                         </NavLink>
                         <NavLink
                             to="/sets"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
-                            SETS
+                            ABOUT US
                         </NavLink>
                         <NavLink
                             to="/outerwear"
                             className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
                         >
-                            OUTERWEAR
+                            CONTACT US
                         </NavLink>
-                        <NavLink
-                            to="/shop-instagram"
-                            className={({ isActive }) => `hover:underline transition whitespace-nowrap ${getNavLinkClass({ isActive })}`}
-                        >
-                            SHOP INSTAGRAM
-                        </NavLink>
+                        
                     </div>
                 </div>
             </div>
@@ -134,11 +131,11 @@ const Navbar = () => {
                             JUMPSUITS
                         </NavLink>
                         <NavLink
-                            to="/tops"
+                            to="/trousers"
                             className={({ isActive }) => `block py-2 hover:text-purple-400 transition ${isActive ? 'text-purple-400 font-medium' : ''}`}
                             onClick={() => setIsOpen(false)}
                         >
-                            TOPS
+                            TROUSERS
                         </NavLink>
                         <NavLink
                             to="/pants"
