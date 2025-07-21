@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import Header from "./compontents/Header";
@@ -21,6 +22,21 @@ function App() {
       <Footer />
     </BrowserRouter>
   );
+=======
+import { useState } from 'react'
+import React from 'react'
+import './App.css'
+import Shopinstagram from './component/pages/Shopinstagram'
+
+function App() {
+
+
+  return (
+    <>
+     <Shopinstagram/>
+    </>
+  )
+>>>>>>> c29b61e635c829d462c3d36556e83f2bb6a13a34
 }
 
 export default App;

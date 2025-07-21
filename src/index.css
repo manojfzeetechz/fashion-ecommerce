@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 @import "tailwindcss";
+=======
+.Tap-Photo {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 30px; 
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+>>>>>>> c29b61e635c829d462c3d36556e83f2bb6a13a34
